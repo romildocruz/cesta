@@ -27,4 +27,8 @@ export class DataService {
     delete(produto: Produto) {
         return this.http.delete(`http://localhost:3000/produtos/${produto.id}`);
     }
+
+    authenticate(data: any) {
+        return this.http.post('http://localhost:3000/accounts/authenticate', data);
+    }
 }
