@@ -1,0 +1,32 @@
+<div class="uk-text-center">
+  <br><br>
+  <div uk-spinner *ngIf="!produtos"></div>
+  <p *ngIf="produtos?.length == 0"><em>Nenhum item encontrado</em></p>
+</div>
+
+<table class="uk-table uk-table-striped uk-table-hover uk-table-divider" *ngIf="produtos?.length > 0">
+  <thead>
+    <tr>
+      <th class="uk-text-center">id</th>
+      <th class="uk-text-center">Titulo</th>
+      <th class="uk-text-center">Preço</th>
+      <th class="uk-text-center">Descrçcao</th>
+      <th class="uk-text-center">Qtde</th>
+      <th class="uk-text-center">Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of produtos">
+      <td>{{ item.id.substring(0,8) | uppercase }}</td>
+      <td>{{ item.titulo }}</td>
+      <td>{{ item.preco }}</td>
+      <td>{{ item.descricao }}</td>
+      <td>{{ item.qtde }}</td>
+      <td>{{ item.categoria }}</td>
+      <td><button class="uk-button uk-button-default" (click)="select(item)">Selecionar</button></td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<button class="uk-button uk-button-primary" (click)="createNew()">Novo Produto</button>
+<app-editor-produto [produto]="produto" [produtos]="produtos"></app-editor-produto>
