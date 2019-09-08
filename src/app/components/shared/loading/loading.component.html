@@ -1,0 +1,7 @@
+<div class="div uk-text-center br uk-spinner">
+  <br><br>
+  <div uk-spinner *ngIf="!data"></div>
+  <div *ngIf="data?.length == 0">
+    <p></p><em>Nenhum item encontrado</em>
+  </div>
+</div>

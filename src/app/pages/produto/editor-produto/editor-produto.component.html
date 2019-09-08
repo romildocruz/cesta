@@ -1,0 +1,36 @@
+<br><br>
+<div class="uk-flex-center" uk-grid>
+  <div class="uk-width-1-2@m">
+    <div class="uk-card uk-card-default uk-card-body">
+      <h3 class="uk-card-title">Getão de Produtos</h3>
+      <form [formGroup]="form">
+        <div class="uk-margin">
+          <input type="text" class="uk-input uk-form-large" placeholder="id" formControlName="id">
+        </div>
+        <div class="uk-margin">
+          <input type="text" class="uk-input uk-form-large" placeholder="titulo" formControlName="titulo">
+        </div>
+        <div class="uk-margin">
+          <input type="text" class="uk-input uk-form-large" placeholder="preco" formControlName="preco">
+        </div>
+        <div class="uk-margin">
+          <input type="text" class="uk-input uk-form-large" placeholder="descricao" formControlName="descricao">
+        </div>
+        <div class="uk-margin">
+          <input type="text" class="uk-input uk-form-large" placeholder="qtde" formControlName="qtde">
+        </div>
+        <div class="uk-margin">
+          <input type="text" class="uk-input uk-form-large" placeholder="categoria" formControlName="categoria">
+        </div>
+      </form>
+      <div class="uk-margin uk-text-right">
+        <button [disabled]="form.invalid" class="uk-button uk-button-default" (click)="create()">Salvar</button>
+        <button [disabled]="form.invalid" class="uk-button uk-button-primary" (click)="update()">Editar</button>
+        <button [disabled]="form.invalid" class="uk-button uk-button-danger" (click)="delete()">Deletar</button>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
