@@ -58,6 +58,7 @@ export class EditorProdutoComponent implements OnInit {
           console.log('Finalizou');
         }
       );
+    this.limparForm();
   }
 
   update() {
@@ -75,6 +76,7 @@ export class EditorProdutoComponent implements OnInit {
           console.log('Finalizou');
         }
       );
+    this.limparForm();
   }
 
   delete() {
@@ -92,7 +94,7 @@ export class EditorProdutoComponent implements OnInit {
           console.log('Finalizou');
         }
       );
-
+    this.limparForm();
   }
 
   loadCategorias() {
@@ -100,5 +102,9 @@ export class EditorProdutoComponent implements OnInit {
     this.Categorias.push({ id: '10', descricao: 'Mouses' });
     this.Categorias.push({ id: '11', descricao: 'Teclados' });
     this.Categorias.push({ id: '12', descricao: 'Monitores' });
+  }
+
+  limparForm() {
+    this.produto = new Produto();
   }
 }

@@ -20,7 +20,10 @@
           <input type="text" class="uk-input uk-form-large" placeholder="qtde" formControlName="qtde">
         </div>
         <div class="uk-margin">
-          <input type="text" class="uk-input uk-form-large" placeholder="categoria" formControlName="categoria">
+          <!-- <input type="text" class="uk-input uk-form-large" placeholder="categoria" formControlName="categoria"> -->
+          <select class="uk-input uk-form-large" formControlName="categoria">
+            <option value="{{ item.id }}" *ngFor="let item of Categorias">{{ item.descricao }}</option>
+          </select>
         </div>
       </form>
       <div class="uk-margin uk-text-right">
